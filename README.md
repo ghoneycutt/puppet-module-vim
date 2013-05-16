@@ -1,4 +1,4 @@
 puppet-module-vim
 =================
 
-Puppet module to manage Vim
+Puppet module to manage vim
