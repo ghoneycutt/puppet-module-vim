@@ -6,7 +6,8 @@ This module manages vim and the root .vimrc file and .vim directory.
 
 This module has been tested to work on the following systems.
 
-* Should work on any system that can use the package resource.
+* EL 5
+* EL 6
 
 # Parameters #
 
@@ -18,7 +19,7 @@ The packages to install.
 
 root_vimrc_source
 -----------------
-Where the root .vimrc to install is located (on the master)
+Path to .vimrc on master in the form of [module]/[filename]
 
 - *Default*: vim/vimrc
 
@@ -48,7 +49,7 @@ The .vimrc mode.
 
 root_vim_dir_source
 -------------------
-Where the root .vim directory to install is located (on the master).
+Path to .vim/ on master in the form of [module]/[filename]
 
 - *Default*: vim/vim
 
