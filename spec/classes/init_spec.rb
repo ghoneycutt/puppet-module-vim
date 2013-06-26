@@ -7,7 +7,6 @@ describe 'vim' do
       let :facts do 
         {
           :osfamily => 'RedHat',
-          :lsbmajdistrelease => '5',
         }
       end
 
