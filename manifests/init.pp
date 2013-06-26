@@ -19,6 +19,10 @@ class vim (
   $root_vim_dir_mode   = '0644',
 ) {
 
+  if $::osfamily != 'RedHat' {
+    fail("vim module only supports osfamily \'RedHat\' and ${::osfamily} was detected.")
+  }
+
   package { 'vim_packages':
     ensure => present,
     name   => $package_list,
