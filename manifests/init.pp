@@ -16,12 +16,9 @@ class vim (
   $root_vim_dir_source = 'vim/vim',
   $root_vim_dir_path   = "${::root_home}/.vim",
   $root_vim_dir_owner  = 'root',
+  $root_vim_dir_group  = 'root',
   $root_vim_dir_mode   = '0644',
 ) {
-
-  if $::osfamily != 'RedHat' {
-    fail("vim module only supports osfamily \'RedHat\' and ${::osfamily} was detected.")
-  }
 
   package { 'vim_packages':
     ensure => present,
