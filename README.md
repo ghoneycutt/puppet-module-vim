@@ -1,13 +1,27 @@
 # vim module #
 
+[![Build Status](
+https://api.travis-ci.org/ghoneycutt/puppet-module-vim.png?branch=master)](https://travis-ci.org/ghoneycutt/puppet-module-vim)
+
 This module manages vim and the root .vimrc file and .vim directory.
+
+===
 
 # Compatibility #
 
-This module has been tested to work on the following systems.
+Puppet Versions | < 2.6 | 2.6 | 2.7 | 3.x |
+:---------------|:-----:|:---:|:---:|:----:
+**ruby 1.8.7**  | no    | no  | **yes** | **yes**
+**ruby 1.9.3**  | no    | no  | **yes** | **yes**
+
+## OS Distributions ##
+
+This module has been tested to work on the following systems. For other systems, you will need to specify the vim packages.
 
 * EL 5
 * EL 6
+
+===
 
 # Parameters #
 
