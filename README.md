@@ -20,16 +20,17 @@ This module has been tested to work on the following systems. For other systems,
 
 * EL 5
 * EL 6
+* SLES 11
 
 ===
 
 # Parameters #
 
-package_list
-------------
+packages
+--------
 The packages to install.
 
-- *Default*: vim-common, vim-enhanced, vim-minimal
+- *Default*: USE_DEFAULTS
 
 root_vimrc_source
 -----------------
