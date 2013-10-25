@@ -26,8 +26,8 @@ This module has been tested to work on the following systems. For other systems,
 
 # Parameters #
 
-packages
---------
+package_list
+------------
 The packages to install.
 
 - *Default*: USE_DEFAULTS

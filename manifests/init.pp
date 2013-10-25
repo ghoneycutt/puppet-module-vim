@@ -3,7 +3,7 @@
 # This module manages vim
 #
 class vim (
-  $packages            = 'USE_DEFAULTS',
+  $package_list        = 'USE_DEFAULTS',
 
   $root_vimrc_source   = 'vim/vimrc',
   $root_vimrc_path     = "${::root_home}/.vimrc",
@@ -18,33 +18,33 @@ class vim (
   $root_vim_dir_mode   = '0644',
 ) {
 
-  if $packages == 'USE_DEFAULTS' {
+  if $package_list == 'USE_DEFAULTS' {
     case $::osfamily {
       'redhat': {
-        $packages_real = [
+        $package_list_real = [
           'vim-common',
           'vim-enhanced',
           'vim-minimal',
         ]
       }
       'suse': {
-        $packages_real = [
+        $package_list_real = [
           'vim',
           'vim-base',
           'vim-data',
         ]
       }
       default: {
-        fail("'USE_DEFAULTS' for \$packages is supported by OS Families Redhat and Suse. Your operatingsystem, ${::operatingsystem}, is part of the osfamily, ${::osfamily}")
+        fail("'USE_DEFAULTS' for \$package_list is supported by OS Families Redhat and Suse. Your operatingsystem, ${::operatingsystem}, is part of the osfamily, ${::osfamily}")
       }
     }
   } else {
-    $packages_real = $packages
+    $package_list_real = $packages
   }
 
   package { 'vim_packages':
     ensure => present,
-    name   => $packages_real,
+    name   => $package_list_real,
   }
 
   file { 'root_vimrc':
