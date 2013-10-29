@@ -16,10 +16,11 @@ Puppet Versions | < 2.6 | 2.6 | 2.7 | 3.x |
 
 ## OS Distributions ##
 
-This module has been tested to work on the following systems. For other systems, you will need to specify the vim packages.
+This module has been tested to work on the following systems.
 
 * EL 5
 * EL 6
+* SLES 11
 
 ===
 
@@ -27,9 +28,9 @@ This module has been tested to work on the following systems. For other systems,
 
 package_list
 ------------
-The packages to install.
+The packages to install. 'USE_DEFAULTS' will choose packages based on the osfamily.
 
-- *Default*: vim-common, vim-enhanced, vim-minimal
+- *Default*: USE_DEFAULTS
 
 root_vimrc_source
 -----------------
