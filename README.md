@@ -16,7 +16,7 @@ Puppet Versions | < 2.6 | 2.6 | 2.7 | 3.x |
 
 ## OS Distributions ##
 
-This module has been tested to work on the following systems. For other systems, you will need to specify the vim packages.
+This module has been tested to work on the following systems.
 
 * EL 5
 * EL 6

@@ -18,28 +18,30 @@ class vim (
   $root_vim_dir_mode   = '0644',
 ) {
 
-  if $package_list == 'USE_DEFAULTS' {
-    case $::osfamily {
-      'redhat': {
-        $package_list_real = [
-          'vim-common',
-          'vim-enhanced',
-          'vim-minimal',
-        ]
-      }
-      'suse': {
-        $package_list_real = [
-          'vim',
-          'vim-base',
-          'vim-data',
-        ]
-      }
-      default: {
-        fail("'USE_DEFAULTS' for \$package_list is supported by OS Families Redhat and Suse. Your operatingsystem, ${::operatingsystem}, is part of the osfamily, ${::osfamily}")
-      }
+  case $::osfamily {
+    'redhat': {
+      $default_package_list = [
+        'vim-common',
+        'vim-enhanced',
+        'vim-minimal',
+      ]
     }
+    'suse': {
+      $default_package_list = [
+        'vim',
+        'vim-base',
+        'vim-data',
+      ]
+    }
+    default: {
+      fail("The vim module says: Supported OS families are RedHat and Suse, detected osfamily is ${::osfamily}.")
+    }
+  }
+
+  if $package_list == 'USE_DEFAULTS' {
+    $package_list_real = $default_package_list
   } else {
-    $package_list_real = $packages
+    $package_list_real = $package_list
   }
 
   package { 'vim_packages':
