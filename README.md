@@ -28,7 +28,7 @@ This module has been tested to work on the following systems. For other systems,
 
 package_list
 ------------
-The packages to install.
+The packages to install. 'USE_DEFAULTS' will choose packages based on the osfamily.
 
 - *Default*: USE_DEFAULTS
 
@@ -85,19 +85,3 @@ root_vim_dir_mode
 The .vim directory mode.
 
 - *Default*: 0644
-
-===
-# Hiera keys with all module defaults:
-<pre>
-vim::package_list: 'USE_DEFAULTS'
-vim::root_vimrc_source: 'vim/vimrc'
-vim::root_vimrc_path: "${::root_home}/.vimrc"
-vim::root_vimrc_owner: 'root'
-vim::root_vimrc_group: 'root'
-vim::root_vimrc_mode: '0644'
-vim::root_vim_dir_source: 'vim/vim'
-vim::root_vim_dir_path: "${::root_home}/.vim"
-vim::root_vim_dir_owner: 'root'
-vim::root_vim_dir_group: 'root'
-vim::root_vim_dir_mode: '0644'
-</pre>
