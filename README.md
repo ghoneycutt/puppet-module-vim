@@ -18,6 +18,7 @@ Puppet Versions | < 2.6 | 2.6 | 2.7 | 3.x |
 
 This module has been tested to work on the following systems.
 
+* Debian 6
 * EL 5
 * EL 6
 * SLES 11
