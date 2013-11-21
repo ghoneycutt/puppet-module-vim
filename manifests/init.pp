@@ -19,6 +19,13 @@ class vim (
 ) {
 
   case $::osfamily {
+    'Debian': {
+      $default_package_list = [
+        'vim-common',
+        'vim-nox',
+        'vim-runtime',
+      ]
+    }
     'RedHat': {
       $default_package_list = [
         'vim-common',
@@ -34,7 +41,7 @@ class vim (
       ]
     }
     default: {
-      fail("vim supports OS families RedHat and Suse. Detected osfamily is <${::osfamily}>.")
+      fail("vim supports OS families Debian, RedHat, and Suse. Detected osfamily is <${::osfamily}>.")
     }
   }
 
