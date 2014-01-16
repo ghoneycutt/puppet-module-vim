@@ -72,7 +72,7 @@ describe 'vim' do
 
   context 'default options on osfamily Suse' do
     let :facts do
-      { :osfamily => 'Suse' }
+      { :osfamily => 'Suse', :lsbmajdistrelease => '11' }
     end
 
     it { should contain_class('vim')}
@@ -102,6 +102,37 @@ describe 'vim' do
         'group'  => 'root',
         'mode'   => '0644',
       })
+    }
+  end
+  context 'default options on osfamily Suse' do
+    let :facts do
+      { :osfamily => 'Suse', :lsbmajdistrelease => '10'}
+    end
+    it {
+      should contain_package('vim_packages').with({
+      'name'   => 'vim',
+      'ensure' => 'present',
+    })
+    }
+
+    it {
+      should contain_file('root_vimrc').with({
+      'ensure' => 'file',
+      'path'   => '/.vimrc',
+      'owner'  => 'root',
+      'group'  => 'root',
+      'mode'   => '0644',
+    })
+    }
+
+    it {
+      should contain_file('root_vim_dir').with({
+      'ensure' => 'directory',
+      'path'   => '/.vim',
+      'owner'  => 'root',
+      'group'  => 'root',
+      'mode'   => '0644',
+    })
     }
   end
 end
