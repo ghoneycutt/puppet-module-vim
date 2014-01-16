@@ -34,11 +34,21 @@ class vim (
       ]
     }
     'Suse': {
-      $default_package_list = [
-        'vim',
-        'vim-base',
-        'vim-data',
-      ]
+      case $::lsbmajdistrelease {
+        '10': {
+          $default_package_list = 'vim'
+        }
+        '11': {
+          $default_package_list = [
+            'vim',
+            'vim-base',
+            'vim-data',
+          ]
+        }
+        default: {
+          fail("vim supports Suse 10 and 11. Detected lsbmajdistrelease is <${::lsbmajdistrelease}>.")
+        }
+      }
     }
     default: {
       fail("vim supports OS families Debian, RedHat, and Suse. Detected osfamily is <${::osfamily}>.")
