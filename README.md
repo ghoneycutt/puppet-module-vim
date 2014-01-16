@@ -3,7 +3,7 @@
 [![Build Status](
 https://api.travis-ci.org/ghoneycutt/puppet-module-vim.png?branch=master)](https://travis-ci.org/ghoneycutt/puppet-module-vim)
 
-This module manages vim and the root .vimrc file and .vim directory.
+This module manages vim and root's .vimrc file and .vim directory.
 
 ===
 
@@ -21,7 +21,8 @@ This module has been tested to work on the following systems.
 * Debian 6
 * EL 5
 * EL 6
-* SLES 11
+* Suse 10
+* Suse 11
 
 ===
 
