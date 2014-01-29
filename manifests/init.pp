@@ -60,10 +60,12 @@ class vim (
   } else {
     $package_list_real = $package_list
   }
+  if type($package_list_real) != 'String' and type($package_list_real) != 'Array' {
+    fail('vim::package_list must be a string or an array.')
+  }
 
-  package { 'vim_packages':
+  package { $package_list_real:
     ensure => present,
-    name   => $package_list_real,
   }
 
   file { 'root_vimrc':
