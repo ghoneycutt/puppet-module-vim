@@ -27,7 +27,7 @@ This module has been tested to work on the following systems.
 
 package_list
 ------------
-The packages to install. 'USE_DEFAULTS' will choose packages based on the osfamily.
+String or Array of the related vim packages. 'USE_DEFAULTS' will choose packages based on the osfamily.
 
 - *Default*: USE_DEFAULTS
 
