@@ -82,6 +82,31 @@ describe 'vim' do
   end
 
   describe 'with package_list set' do
+    context 'to an array' do
+      let(:params) { { :package_list => ['vimfoo','vimbar'] } }
+      let :facts do
+        { :osfamily          => 'RedHat',
+          :lsbmajdistrelease => '6',
+        }
+      end
+
+      it { should compile.with_all_deps }
+
+      it { should contain_class('vim')}
+
+      it {
+        should contain_package('vimfoo').with({
+          'ensure' => 'present',
+        })
+      }
+
+      it {
+        should contain_package('vimbar').with({
+          'ensure' => 'present',
+        })
+      }
+    end
+
     context 'to a string' do
       let(:params) { { :package_list => 'string' } }
       let :facts do
