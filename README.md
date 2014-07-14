@@ -20,6 +20,7 @@ This module has been tested to work on the following systems.
 * EL 6
 * Suse 10
 * Suse 11
+* Suse 12
 
 ===
 

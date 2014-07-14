@@ -27,6 +27,11 @@ describe 'vim' do
         :release  => '11',
         :packages => ['vim','vim-base','vim-data'],
       },
+    'suse12' =>
+      { :osfamily => 'Suse',
+        :release  => '12',
+        :packages => ['vim','vim-base','vim-data'],
+      },
   }
 
   describe 'with default values for parameters on' do
@@ -128,7 +133,7 @@ describe 'vim' do
       it 'should fail' do
         expect {
           should contain_class('vim')
-        }.to raise_error(Puppet::Error,/^vim supports Suse 10 and 11. Detected lsbmajdistrelease is <9>/)
+        }.to raise_error(Puppet::Error,/^vim supports Suse 10, 11, and 12. Detected lsbmajdistrelease is <9>/)
       end
     end
 
