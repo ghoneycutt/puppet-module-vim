@@ -22,6 +22,7 @@ This module has been tested to work on the following systems.
 * Suse 10
 * Suse 11
 * Suse 12
+* Solaris 10
 
 ===
 

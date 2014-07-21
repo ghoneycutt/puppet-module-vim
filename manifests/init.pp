@@ -57,8 +57,21 @@ class vim (
         }
       }
     }
+    'Solaris': {
+      case $::kernelrelease {
+        '5.10': {
+          $default_package_list = 'CSWvim'
+        }
+        '5.11': {
+          $default_package_list = 'vim'
+        }
+        default: {
+          fail("vim supports Solaris 10 and 11. Detected kernelrelease is <${::kernelrelease}>.")
+        }
+      }
+    }
     default: {
-      fail("vim supports OS families Debian, RedHat, and Suse. Detected osfamily is <${::osfamily}>.")
+      fail("vim supports OS families Debian, RedHat, Suse and Solaris. Detected osfamily is <${::osfamily}>.")
     }
   }
 
@@ -67,16 +80,13 @@ class vim (
   } else {
     $package_list_real = $package_list
   }
-  if type($package_list_real) != 'String' and type($package_list_real) != 'Array' {
-    fail('vim::package_list must be a string or an array.')
-  }
 
   package { $package_list_real:
-    ensure => present,
+    ensure => 'present',
   }
 
   file { 'root_vimrc':
-    ensure => file,
+    ensure => 'file',
     source => "puppet:///modules/${root_vimrc_source}",
     path   => $root_vimrc_path,
     owner  => $root_vimrc_owner,
@@ -85,7 +95,7 @@ class vim (
   }
 
   file { 'root_vim_dir':
-    ensure  => directory,
+    ensure  => 'directory',
     recurse => true,
     source  => "puppet:///modules/${root_vim_dir_source}",
     path    => $root_vim_dir_path,
