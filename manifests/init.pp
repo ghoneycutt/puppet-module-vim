@@ -50,8 +50,13 @@ class vim (
         }
       }
     }
+    'Solaris': {
+      $default_package_list = [
+        'CSWvim',
+      ]
+    }
     default: {
-      fail("vim supports OS families Debian, RedHat, and Suse. Detected osfamily is <${::osfamily}>.")
+      fail("vim supports OS families Debian, RedHat, Suse and Solaris. Detected osfamily is <${::osfamily}>.")
     }
   }
 
