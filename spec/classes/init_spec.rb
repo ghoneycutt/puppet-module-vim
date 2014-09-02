@@ -27,6 +27,11 @@ describe 'vim' do
         :release  => '11',
         :packages => ['vim','vim-base','vim-data'],
       },
+    'solaris10' =>
+      { :osfamily => 'Solaris',
+        :release  => '10',
+        :packages => ['CSWvim'],
+      },
   }
 
   describe 'with default values for parameters on' do
@@ -167,7 +172,7 @@ describe 'vim' do
       it 'should fail' do
         expect {
           should contain_class('vim')
-        }.to raise_error(Puppet::Error,/^vim supports OS families Debian, RedHat, and Suse. Detected osfamily is <Unsupported>./)
+        }.to raise_error(Puppet::Error,/^vim supports OS families Debian, RedHat, Suse and Solaris. Detected osfamily is <Unsupported>./)
       end
     end
   end
