@@ -51,9 +51,14 @@ class vim (
       }
     }
     'Solaris': {
-      $default_package_list = [
-        'CSWvim',
-      ]
+      case $::kernelrelease {
+        '5.10': {
+          $default_package_list = 'CSWvim'
+        }
+        '5.11': {
+          $default_package_list = 'vim'
+        }
+      }
     }
     default: {
       fail("vim supports OS families Debian, RedHat, Suse and Solaris. Detected osfamily is <${::osfamily}>.")
@@ -64,9 +69,6 @@ class vim (
     $package_list_real = $default_package_list
   } else {
     $package_list_real = $package_list
-  }
-  if type($package_list_real) != 'String' and type($package_list_real) != 'Array' {
-    fail('vim::package_list must be a string or an array.')
   }
 
   package { $package_list_real:
