@@ -38,7 +38,7 @@ class vim (
         '10': {
           $default_package_list = 'vim'
         }
-        '11': {
+        '11', '12': {
           $default_package_list = [
             'vim',
             'vim-base',
@@ -46,7 +46,7 @@ class vim (
           ]
         }
         default: {
-          fail("vim supports Suse 10 and 11. Detected lsbmajdistrelease is <${::lsbmajdistrelease}>.")
+          fail("vim supports Suse 10, 11, and 12. Detected lsbmajdistrelease is <${::lsbmajdistrelease}>.")
         }
       }
     }
@@ -72,6 +72,9 @@ class vim (
     $package_list_real = $default_package_list
   } else {
     $package_list_real = $package_list
+  }
+  if type($package_list_real) != 'String' and type($package_list_real) != 'Array' {
+    fail('vim::package_list must be a string or an array.')
   }
 
   package { $package_list_real:
