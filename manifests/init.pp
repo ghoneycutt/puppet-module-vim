@@ -58,6 +58,9 @@ class vim (
         '5.11': {
           $default_package_list = 'vim'
         }
+        default: {
+          fail("vim supports Solaris 10 and 11. Detected kernelrelease is <${::kernelrelease}>.")
+        }
       }
     }
     default: {
@@ -72,11 +75,11 @@ class vim (
   }
 
   package { $package_list_real:
-    ensure => present,
+    ensure => 'present',
   }
 
   file { 'root_vimrc':
-    ensure => file,
+    ensure => 'file',
     source => "puppet:///modules/${root_vimrc_source}",
     path   => $root_vimrc_path,
     owner  => $root_vimrc_owner,
@@ -85,7 +88,7 @@ class vim (
   }
 
   file { 'root_vim_dir':
-    ensure  => directory,
+    ensure  => 'directory',
     recurse => true,
     source  => "puppet:///modules/${root_vim_dir_source}",
     path    => $root_vim_dir_path,
