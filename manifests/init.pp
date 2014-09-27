@@ -70,8 +70,15 @@ class vim (
         }
       }
     }
+    'Ubuntu': {
+      $default_package_list = [
+        'vim-common',
+        'vim-nox',
+        'vim-runtime',
+      ]
+    }
     default: {
-      fail("vim supports OS families Debian, RedHat, Suse and Solaris. Detected osfamily is <${::osfamily}>.")
+      fail("vim supports OS families Debian, RedHat, Solaris, Suse and Ubuntu. Detected osfamily is <${::osfamily}>.")
     }
   }
 
