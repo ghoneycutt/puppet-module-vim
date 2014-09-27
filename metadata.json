@@ -61,6 +61,13 @@
       ]
     },
     {
+      "operatingsystem": "Solaris",
+      "operatingsystemrelease": [
+        "10",
+        "11"
+      ]
+    },
+    {
       "operatingsystem": "SLES",
       "operatingsystemrelease": [
         "10",

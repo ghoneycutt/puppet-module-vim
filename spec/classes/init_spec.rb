@@ -36,21 +36,34 @@ describe 'vim' do
       { :osfamily => 'Suse',
         :release  => '12',
         :packages => ['vim','vim-base','vim-data'],
-      }
+      },
     'solaris10' =>
       { :osfamily => 'Solaris',
-        :release  => '10',
-        :packages => ['CSWvim'],
+        :release  => '5.10',
+        :packages => 'CSWvim',
+      },
+    'solaris11' =>
+      { :osfamily => 'Solaris',
+        :release  => '5.11',
+        :packages => 'vim',
       },
   }
 
   describe 'with default values for parameters on' do
     platforms.sort.each do |k,v|
       context "#{v[:osfamily]} #{v[:release]}" do
-        let :facts do
-          { :osfamily          => v[:osfamily],
-            :lsbmajdistrelease => v[:release],
-          }
+        if v[:osfamily] == 'Solaris'
+          let :facts do
+            { :osfamily => v[:osfamily],
+              :kernelrelease => v[:release],
+            }
+          end
+        else
+          let :facts do
+            { :osfamily          => v[:osfamily],
+              :lsbmajdistrelease => v[:release],
+            }
+          end
         end
 
         it { should compile.with_all_deps }
@@ -169,6 +182,20 @@ describe 'vim' do
         expect {
           should contain_class('vim')
         }.to raise_error(Puppet::Error,/^vim supports Suse 10, 11, and 12. Detected lsbmajdistrelease is <9>/)
+      end
+    end
+
+    context 'version of Solaris' do
+      let :facts do
+        { :osfamily => 'Solaris',
+          :kernelrelease => '5.9',
+        }
+      end
+
+      it 'should fail' do
+        expect {
+          should contain_class('vim')
+        }.to raise_error(Puppet::Error,/^vim supports Solaris 10 and 11. Detected kernelrelease is <5.9>/)
       end
     end
 
