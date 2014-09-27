@@ -27,11 +27,18 @@ class vim (
       ]
     }
     'RedHat': {
-      $default_package_list = [
-        'vim-common',
-        'vim-enhanced',
-        'vim-minimal',
-      ]
+      if $::operatingsystemmajrelease == '7' {
+        $default_package_list = [
+          'vim-common',
+          'vim-enhanced',
+        ]
+      } else {
+        $default_package_list = [
+          'vim-common',
+          'vim-enhanced',
+          'vim-minimal',
+        ]
+      }
     }
     'Suse': {
       case $::lsbmajdistrelease {

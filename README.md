@@ -18,6 +18,7 @@ This module has been tested to work on the following systems.
 * Debian 6
 * EL 5
 * EL 6
+* EL 7
 * Suse 10
 * Suse 11
 * Suse 12
