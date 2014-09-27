@@ -17,6 +17,11 @@ describe 'vim' do
         :release  => '6',
         :packages => [ 'vim-common', 'vim-enhanced', 'vim-minimal'],
       },
+    'el7' =>
+      { :osfamily => 'RedHat',
+        :release  => '7',
+        :packages => [ 'vim-common', 'vim-enhanced'],
+      },
     'suse10' =>
       { :osfamily => 'Suse',
         :release  => '10',
