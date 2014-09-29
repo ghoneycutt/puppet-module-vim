@@ -82,6 +82,13 @@
         "11",
         "12"
       ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "12.04",
+        "14.04"
+      ]
     }
   ],
   "description": "Manage Vim",

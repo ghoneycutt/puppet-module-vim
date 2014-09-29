@@ -47,11 +47,21 @@ describe 'vim' do
         :release  => '5.11',
         :packages => 'vim',
       },
+    'ubuntu1204' =>
+      { :osfamily => 'Debian',
+        :release  => '12',
+        :packages => [ 'vim-common', 'vim-nox', 'vim-runtime'],
+      },
+    'ubuntu1404' =>
+      { :osfamily => 'Debian',
+        :release  => '14',
+        :packages => [ 'vim-common', 'vim-nox', 'vim-runtime'],
+      },
   }
 
   describe 'with default values for parameters on' do
     platforms.sort.each do |k,v|
-      context "#{v[:osfamily]} #{v[:release]}" do
+      context "#{k}" do
         if v[:osfamily] == 'Solaris'
           let :facts do
             { :osfamily => v[:osfamily],
@@ -209,7 +219,7 @@ describe 'vim' do
       it 'should fail' do
         expect {
           should contain_class('vim')
-        }.to raise_error(Puppet::Error,/^vim supports OS families Debian, RedHat, Suse and Solaris. Detected osfamily is <Unsupported>./)
+        }.to raise_error(Puppet::Error,/^vim supports OS families Debian, RedHat, Solaris, Suse and Ubuntu. Detected osfamily is <Unsupported>./)
       end
     end
   end
