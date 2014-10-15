@@ -31,6 +31,12 @@ This module has been tested to work on the following systems.
 
 # Parameters #
 
+package_provider
+----------------
+String to define the package provider to use.
+
+- *Default*: undef
+
 package_list
 ------------
 String or Array of the related vim packages. 'USE_DEFAULTS' will choose packages based on the osfamily.
