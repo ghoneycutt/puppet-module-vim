@@ -84,14 +84,16 @@ describe 'vim' do
           v[:packages].each do |pkg|
             it {
               should contain_package(pkg).with({
-                'ensure' => 'present',
+                'ensure'   => 'present',
+                'provider' => nil,
               })
             }
           end
         else
           it {
             should contain_package(v[:packages]).with({
-              'ensure' => 'present',
+              'ensure'   => 'present',
+              'provider' => nil,
             })
           }
         end
