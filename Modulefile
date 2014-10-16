@@ -1,5 +1,5 @@
 name    'ghoneycutt-vim'
-version '2.8.0'
+version '2.9.0'
 source 'git://github.com/ghoneycutt/puppet-module-vim.git'
 author 'ghoneycutt'
 license 'Apache License, Version 2.0'
