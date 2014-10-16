@@ -84,14 +84,16 @@ describe 'vim' do
           v[:packages].each do |pkg|
             it {
               should contain_package(pkg).with({
-                'ensure' => 'present',
+                'ensure'   => 'present',
+                'provider' => nil,
               })
             }
           end
         else
           it {
             should contain_package(v[:packages]).with({
-              'ensure' => 'present',
+              'ensure'   => 'present',
+              'provider' => nil,
             })
           }
         end
@@ -176,6 +178,53 @@ describe 'vim' do
         expect {
           should contain_class('vim')
         }.to raise_error(Puppet::Error,/vim::package_list must be a string or an array./)
+      end
+    end
+  end
+
+  describe 'with package_provider set' do
+    context 'to pkgutil' do
+      let(:params) {
+        {
+          :package_provider => 'pkgutil',
+          :package_list     => 'vim',
+        }
+      }
+      let :facts do
+        { :osfamily      => 'Solaris',
+          :kernelrelease => '5.10',
+        }
+      end
+
+      it { should compile.with_all_deps }
+
+      it { should contain_class('vim')}
+
+      it {
+        should contain_package('vim').with({
+          'ensure'   => 'present',
+          'provider' => 'pkgutil',
+        })
+      }
+    end
+
+    context 'to an invalid type (boolean)' do
+      let(:params) {
+        {
+          :package_provider => true,
+          :package_list     => 'vim',
+        }
+      }
+      let :facts do
+        { :osfamily      => 'Solaris',
+          :kernelrelease => '5.10',
+        }
+      end
+
+      it 'should fail' do
+        expect {
+          should contain_class('vim')
+        }.to raise_error(Puppet::Error,/^true is not a string./)
       end
     end
   end

@@ -3,6 +3,7 @@
 # This module manages vim
 #
 class vim (
+  $package_provider    = undef,
   $package_list        = 'USE_DEFAULTS',
 
   $root_vimrc_source   = 'vim/vimrc',
@@ -17,6 +18,10 @@ class vim (
   $root_vim_dir_group  = 'root',
   $root_vim_dir_mode   = '0644',
 ) {
+
+  if $package_provider != undef {
+    validate_string($package_provider)
+  }
 
   case $::osfamily {
     'Debian': {
@@ -93,7 +98,8 @@ class vim (
   }
 
   package { $package_list_real:
-    ensure => present,
+    ensure   => present,
+    provider => $package_provider,
   }
 
   file { 'root_vimrc':
