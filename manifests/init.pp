@@ -53,7 +53,6 @@ class vim (
         '11', '12': {
           $default_package_list = [
             'vim',
-            'vim-base',
             'vim-data',
           ]
         }

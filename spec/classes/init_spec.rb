@@ -30,12 +30,12 @@ describe 'vim' do
     'suse11' =>
       { :osfamily => 'Suse',
         :release  => '11',
-        :packages => ['vim','vim-base','vim-data'],
+        :packages => ['vim','vim-data'],
       },
     'suse12' =>
       { :osfamily => 'Suse',
         :release  => '12',
-        :packages => ['vim','vim-base','vim-data'],
+        :packages => ['vim','vim-data'],
       },
     'solaris10' =>
       { :osfamily => 'Solaris',
