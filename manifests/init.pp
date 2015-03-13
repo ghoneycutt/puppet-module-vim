@@ -92,7 +92,7 @@ class vim (
     $package_list_real = $package_list
   }
 
-  if type($package_list_real) != 'String' and type($package_list_real) != 'Array' {
+  if !is_string($package_list_real) and !is_array($package_list_real) {
     fail('vim::package_list must be a string or an array.')
   }
 
