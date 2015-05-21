@@ -224,7 +224,7 @@ describe 'vim' do
       it 'should fail' do
         expect {
           should contain_class('vim')
-        }.to raise_error(Puppet::Error,/^true is not a string/)
+        }.to raise_error(Puppet::Error,/true is not a string/)
       end
     end
   end
@@ -240,7 +240,7 @@ describe 'vim' do
       it 'should fail' do
         expect {
           should contain_class('vim')
-        }.to raise_error(Puppet::Error,/^vim supports Suse 10, 11, and 12\. Detected lsbmajdistrelease is <9>/)
+        }.to raise_error(Puppet::Error,/vim supports Suse 10, 11, and 12\. Detected lsbmajdistrelease is <9>/)
       end
     end
 
@@ -254,7 +254,7 @@ describe 'vim' do
       it 'should fail' do
         expect {
           should contain_class('vim')
-        }.to raise_error(Puppet::Error,/^vim supports Solaris 10 and 11\. Detected kernelrelease is <5\.9>/)
+        }.to raise_error(Puppet::Error,/vim supports Solaris 10 and 11\. Detected kernelrelease is <5\.9>/)
       end
     end
 
@@ -268,7 +268,7 @@ describe 'vim' do
       it 'should fail' do
         expect {
           should contain_class('vim')
-        }.to raise_error(Puppet::Error,/^vim supports OS families Debian, RedHat, Solaris, Suse and Ubuntu\. Detected osfamily is <Unsupported>\./)
+        }.to raise_error(Puppet::Error,/vim supports OS families Debian, RedHat, Solaris, Suse and Ubuntu\. Detected osfamily is <Unsupported>\./)
       end
     end
   end
