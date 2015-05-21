@@ -9,7 +9,7 @@ This module manages vim and root's .vimrc file and .vim directory.
 
 # Compatibility #
 
-Puppet v3 with Ruby 1.8.7 and 1.9.3
+Puppet v3 with Ruby versions 1.8.7, 1.9.3, 2.0.0 and 2.1.0.
 
 ## OS Distributions ##
 

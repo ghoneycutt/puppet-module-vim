@@ -3,22 +3,19 @@
   "version": "2.9.1",
   "author": "ghoneycutt",
   "summary": "Manage everyone's favorite editor, Vim.",
-  "license": "Apache License, Version 2.0",
+  "description": "Manage Vim",
+  "license": "Apache-2.0",
   "source": "git://github.com/ghoneycutt/puppet-module-vim.git",
   "project_page": "https://github.com/ghoneycutt/puppet-module-vim",
   "issues_url": "https://github.com/ghoneycutt/puppet-module-vim/issues",
   "requirements": [
     {
       "name": "pe",
-      "version_requirement": "3.2.x"
+      "version_requirement": ">= 3.2.0"
     },
     {
       "name": "puppet",
-      "version_requirement": "3.x"
-    },
-    {
-      "name": "facter",
-      "version_requirement": ">= 1.7.0"
+      "version_requirement": ">= 3.0.0 < 4.0.0"
     }
   ],
   "operatingsystem_support": [
@@ -91,40 +88,9 @@
       ]
     }
   ],
-  "description": "Manage Vim",
   "dependencies": [
     {
-      "name": "puppetlabs/stdlib",
-      "version_requirement": ">= 3.2.0"
+      "name": "puppetlabs/stdlib","version_requirement": ">= 4.6.0 < 6.0.0"
     }
-  ],
-  "types": [
-
-  ],
-  "checksums": {
-    "CHANGELOG": "15458e8eb413081b0a9cec5ef4d51ba8",
-    "Gemfile": "93225a60957b051c8d28a6da599477b2",
-    "Gemfile.lock": "b424c9b84d11b8e15b3d2b3977f7ba94",
-    "LICENSE": "567e6cc3941d464d60c74d1f4abd5f46",
-    "Modulefile": "ecbc0db42bd46bf8a4eeecfad8b9a3d9",
-    "README.md": "f3d01996fa02b755d5916bf0b7e853d9",
-    "Rakefile": "87ee3b5b114ae2b1eaaedaf0cd50df37",
-    "files/vim/README": "09dd5ea687ea7074686df050905782a2",
-    "files/vim/ftdetect/markdown.vim": "14fc924038beb57c8730110f53dbc425",
-    "files/vim/ftdetect/nginx.vim": "8a72fb7c9ac10412b24351449fbd5e7e",
-    "files/vim/ftdetect/puppet.vim": "9e93cd63787de6b9ed458c95061f06eb",
-    "files/vim/ftplugin/markdown.vim": "325f5b3717d3906e1c3e0d4cd8932d10",
-    "files/vim/ftplugin/puppet.vim": "0fde61360edf2bb205947f768bfb2d57",
-    "files/vim/indent/puppet.vim": "4bc2dee4c9c4e74aa3103339ad3ab227",
-    "files/vim/syntax/javascript.vim": "f6380b9c12e72b02d465a72a6e0c7f33",
-    "files/vim/syntax/markdown.vim": "584186c5c51edfa9981cd21473f1be9f",
-    "files/vim/syntax/nginx.vim": "f6a7d3d4f7a7a7d4d6af9deffeda9632",
-    "files/vim/syntax/puppet.vim": "b89d71a7e7d6ce4eb81d884565977be2",
-    "files/vim/tools/less.vim": "1621e9e4c01f7f6b5b1844b6674863c7",
-    "files/vimrc": "2efa71e75dd8d5d78a369df4ffca5ac1",
-    "manifests/init.pp": "92782170e93e9359a59bd578e03d21ba",
-    "spec/classes/init_spec.rb": "a5b38cca31992296f2e65b2f7423ac90",
-    "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc",
-    "tests/init.pp": "b651e1a93505b3f5baf094fd19fdc663"
-  }
+  ]
 }
