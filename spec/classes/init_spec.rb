@@ -64,14 +64,15 @@ describe 'vim' do
       context "#{k}" do
         if v[:osfamily] == 'Solaris'
           let :facts do
-            { :osfamily => v[:osfamily],
+            { :osfamily      => v[:osfamily],
               :kernelrelease => v[:release],
             }
           end
         else
           let :facts do
-            { :osfamily          => v[:osfamily],
-              :lsbmajdistrelease => v[:release],
+            { :osfamily                  => v[:osfamily],
+              :lsbmajdistrelease         => v[:release],
+              :operatingsystemmajrelease => v[:release],
             }
           end
         end
@@ -101,7 +102,7 @@ describe 'vim' do
         it {
           should contain_file('root_vimrc').with({
             'ensure' => 'file',
-            'path'   => '/.vimrc',
+            'path'   => '/root/.vimrc',
             'owner'  => 'root',
             'group'  => 'root',
             'mode'   => '0644',
@@ -111,7 +112,7 @@ describe 'vim' do
         it {
           should contain_file('root_vim_dir').with({
             'ensure' => 'directory',
-            'path'   => '/.vim',
+            'path'   => '/root/.vim',
             'owner'  => 'root',
             'group'  => 'root',
             'mode'   => '0644',
@@ -125,8 +126,9 @@ describe 'vim' do
     context 'to an array' do
       let(:params) { { :package_list => ['vimfoo','vimbar'] } }
       let :facts do
-        { :osfamily          => 'RedHat',
-          :lsbmajdistrelease => '6',
+        { :osfamily                  => 'RedHat',
+          :lsbmajdistrelease         => '6',
+          :operatingsystemmajrelease => '6',
         }
       end
 
@@ -150,8 +152,9 @@ describe 'vim' do
     context 'to a string' do
       let(:params) { { :package_list => 'string' } }
       let :facts do
-        { :osfamily          => 'RedHat',
-          :lsbmajdistrelease => '6',
+        { :osfamily                  => 'RedHat',
+          :lsbmajdistrelease         => '6',
+          :operatingsystemmajrelease => '6',
         }
       end
 
@@ -169,8 +172,9 @@ describe 'vim' do
     context 'an invalid type (boolean)' do
       let(:params) { { :package_list => true } }
       let :facts do
-        { :osfamily          => 'RedHat',
-          :lsbmajdistrelease => '6',
+        { :osfamily                  => 'RedHat',
+          :lsbmajdistrelease         => '6',
+          :operatingsystemmajrelease => '6',
         }
       end
 
@@ -232,8 +236,9 @@ describe 'vim' do
   describe 'with unsupported' do
     context 'version of Suse' do
       let :facts do
-        { :osfamily          => 'Suse',
-          :lsbmajdistrelease => '9',
+        { :osfamily                  => 'Suse',
+          :lsbmajdistrelease         => '9',
+          :operatingsystemmajrelease => '9',
         }
       end
 
@@ -260,8 +265,9 @@ describe 'vim' do
 
     context 'osfamily' do
       let :facts do
-        { :osfamily          => 'Unsupported',
-          :lsbmajdistrelease => '9',
+        { :osfamily                  => 'Unsupported',
+          :lsbmajdistrelease         => '9',
+          :operatingsystemmajrelease => '9',
         }
       end
 
