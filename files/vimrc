@@ -35,3 +35,6 @@ filetype plugin indent on
 
 au BufRead,BufNewFile *.pp set filetype=puppet
 
+autocmd FileType make setlocal noexpandtab
+
+set encoding=UTF-8

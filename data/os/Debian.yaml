@@ -1,0 +1,5 @@
+---
+vim::package_list:
+ - 'vim-common'
+ - 'vim-nox'
+ - 'vim-runtime'
