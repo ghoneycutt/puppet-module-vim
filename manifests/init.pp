@@ -1,102 +1,64 @@
-# == Class: vim
+# @summary This module manages Vim
 #
-# This module manages vim
+# @example
+#   include vim
+#
+# @param package_provider
+#   The puppet provider to be used for the package resources.
+#
+# @param package_list
+#   List of vim packages to be present.
+#
+# @param root_vimrc_source
+#   Value of the source parameter used in the file resource for managing
+#   `.vimrc`.
+#
+# @param root_vimrc_path
+#   Path to the `.vimrc` configuration file.
+#
+# @param root_vimrc_owner
+#   Owner of the `.vimrc` file.
+#
+# @param root_vimrc_group
+#   Group of the `.vimrc` file.
+#
+# @param root_vimrc_mode
+#   Mode of the `.vimrc` file.
+#
+# @param root_vim_dir_source
+#   Value of the source parameter used in the file resource for managing the
+#   `.vim` directory.
+#
+# @param root_vim_dir_path
+#   Path to the `.vim` directory.
+#
+# @param root_vim_dir_owner
+#   Owner of the `.vim` directory.
+#
+# @param root_vim_dir_group
+#   Group of the `.vim` directory.
+#
+# @param root_vim_dir_mode
+#   Mode of the `.vim` directory.
 #
 class vim (
-  $package_provider    = undef,
-  $package_list        = 'USE_DEFAULTS',
+  Optional[String[1]] $package_provider = undef,
+  Array[String[1]] $package_list = ['vim-common', 'vim-enhanced'],
 
-  $root_vimrc_source   = 'vim/vimrc',
-  $root_vimrc_path     = "${::root_home}/.vimrc",
-  $root_vimrc_owner    = 'root',
-  $root_vimrc_group    = 'root',
-  $root_vimrc_mode     = '0644',
+  String[1] $root_vimrc_source = 'vim/vimrc',
+  Stdlib::Absolutepath $root_vimrc_path = '/root/.vimrc',
+  String[1] $root_vimrc_owner = 'root',
+  String[1] $root_vimrc_group = 'root',
+  Stdlib::Filemode $root_vimrc_mode = '0644',
 
-  $root_vim_dir_source = 'vim/vim',
-  $root_vim_dir_path   = "${::root_home}/.vim",
-  $root_vim_dir_owner  = 'root',
-  $root_vim_dir_group  = 'root',
-  $root_vim_dir_mode   = '0644',
+  String[1] $root_vim_dir_source = 'vim/vim',
+  Stdlib::Absolutepath $root_vim_dir_path = '/root/.vim',
+  String[1] $root_vim_dir_owner = 'root',
+  String[1] $root_vim_dir_group = 'root',
+  Stdlib::Filemode $root_vim_dir_mode = '0644',
 ) {
 
-  if $package_provider != undef {
-    validate_string($package_provider)
-  }
-
-  case $::osfamily {
-    'Debian': {
-      $default_package_list = [
-        'vim-common',
-        'vim-nox',
-        'vim-runtime',
-      ]
-    }
-    'RedHat': {
-      if $::operatingsystemmajrelease == '7' {
-        $default_package_list = [
-          'vim-common',
-          'vim-enhanced',
-        ]
-      } else {
-        $default_package_list = [
-          'vim-common',
-          'vim-enhanced',
-          'vim-minimal',
-        ]
-      }
-    }
-    'Suse': {
-      case $::lsbmajdistrelease {
-        '10': {
-          $default_package_list = 'vim'
-        }
-        '11', '12': {
-          $default_package_list = [
-            'vim',
-            'vim-data',
-          ]
-        }
-        default: {
-          fail("vim supports Suse 10, 11, and 12. Detected lsbmajdistrelease is <${::lsbmajdistrelease}>.")
-        }
-      }
-    }
-    'Solaris': {
-      case $::kernelrelease {
-        '5.10': {
-          $default_package_list = 'CSWvim'
-        }
-        '5.11': {
-          $default_package_list = 'vim'
-        }
-        default: {
-          fail("vim supports Solaris 10 and 11. Detected kernelrelease is <${::kernelrelease}>.")
-        }
-      }
-    }
-    'Ubuntu': {
-      $default_package_list = [
-        'vim-common',
-        'vim-nox',
-        'vim-runtime',
-      ]
-    }
-    default: {
-      fail("vim supports OS families Debian, RedHat, Solaris, Suse and Ubuntu. Detected osfamily is <${::osfamily}>.")
-    }
-  }
-
-  if $package_list == 'USE_DEFAULTS' {
-    $package_list_real = $default_package_list
-  } else {
-    $package_list_real = $package_list
-  }
-
-  if type3x($package_list_real) != 'String' and type3x($package_list_real) != 'Array' {
-    fail('vim::package_list must be a string or an array.')
-  }
-
-  package { $package_list_real:
+  package { $package_list:
     ensure   => present,
     provider => $package_provider,
   }

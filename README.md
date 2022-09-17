@@ -1,100 +1,61 @@
-# vim module #
+# vim
 
-[![Build Status](
-https://api.travis-ci.org/ghoneycutt/puppet-module-vim.png?branch=master)](https://travis-ci.org/ghoneycutt/puppet-module-vim)
+#### Table of Contents
 
-This module manages vim and root's .vimrc file and .vim directory.
+1. [Module Description - What the module does and why it is useful](#module-description)
+1. [Setup - The basics of getting started with vim](#setup)
+   * [What vim affects](#what-vim-affects)
+   * [Beginning with vim](#beginning-with-vim)
+1. [Usage - Configuration options and additional functionality](#usage)
+1. [Limitations - OS compatibility, etc.](#limitations)
+1. [Development - Guide for contributing to the module](#development)
 
-===
+## Description
 
-# Compatibility #
+This is a very simple module to manage Vim. It manages the packages, the
+`.vimrc` configuration file and populates a few syntax files for Puppet.
+This is meant to make vim useful on servers with some basic, sane
+settings. It is not meant to manage a developer's workstation where you
+would be managing a ton of plugins and configuration.
 
-This module has been tested to work on the following systems with the
-latest Puppet v3, v3 with future parser, v4, v5 and v6.  See `.travis.yml`
-for the exact matrix of supported Puppet and ruby versions.
+## Setup
 
-## OS Distributions ##
+### What vim affects
 
-This module has been tested to work on the following systems.
+This module manages the `/root/.vimrc` file and `/root/.vim` directory,
+which gets some plugins installed. It also manages the related vim
+packages for the platform.
 
-* Debian 6
-* EL 5
-* EL 6
-* EL 7
-* Suse 10
-* Suse 11
-* Suse 12
-* Solaris 10
-* Solaris 11
-* Ubuntu 12.04
-* Ubuntu 14.04
+### Beginning with vim
 
-===
+Declare the `vim` class.
 
-# Parameters #
+## Usage
 
-package_provider
-----------------
-String to define the package provider to use.
+The normal use case.
 
-- *Default*: undef
+```puppet
+include vim
+```
 
-package_list
-------------
-String or Array of the related vim packages. 'USE_DEFAULTS' will choose packages based on the osfamily.
+To specify the package list.
 
-- *Default*: USE_DEFAULTS
+```puppet
+class { 'vim':
+  package_list => ['vim', 'vim-whatever'],
+}
+```
 
-root_vimrc_source
------------------
-Path to .vimrc on master in the form of [module]/[filename]
+## Limitations
 
-- *Default*: vim/vimrc
+This module officially supports the platforms listed in the
+`metadata.json`. It does not fail on unsupported platforms and has been
+known to work on many, many platforms since its creation in 2010.
 
-root_vimrc_path
----------------
-Where to install the root .vimrc file.
+## Development
 
-- *Default*: ${::root_home}/.vimrc
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
-root_vimrc_owner
-----------------
-The .vimrc owner.
+## License
 
-- *Default*: root
-
-root_vimrc_group
-----------------
-The .vimrc group.
-
-- *Default*: root
-
-root_vimrc_mode
----------------
-The .vimrc mode.
-
-- *Default*: 0644
-
-root_vim_dir_source
--------------------
-Path to .vim/ on master in the form of [module]/[filename]
-
-- *Default*: vim/vim
-
-root_vim_dir_path
------------------
-Where to install the root .vim directory.
-
-- *Default*: ${::root_home}/.vim
-
-root_vim_dir_owner
-------------------
-The .vim directory owner.
-
-- *Default*: root
-
-root_vim_dir_mode
------------------
-The .vim directory mode.
-
-- *Default*: 0644
+See [LICENSE](LICENSE) file.

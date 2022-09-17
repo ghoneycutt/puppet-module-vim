@@ -3,14 +3,14 @@
 " Maintainer:   Yi Zhao (ZHAOYI) <zzlinux AT hotmail DOT com>
 " Last Change:  May 17, 2007
 " Version:      0.7.5
-" Changes:      1, Get the vimdiff problem fixed finally.
+" Changes:      1, Get the vimdiff problem fixed finally. 
 "                Matthew Gallant reported the problem and test the fix. ;)
 "               2, Follow the suggestioin from Ingo Karkat.
-"                The 'foldtext' and 'foldlevel' settings should only be
-"                changed if the file being edited is pure JavaScript,
+"                The 'foldtext' and 'foldlevel' settings should only be 
+"                changed if the file being edited is pure JavaScript, 
 "                not if JavaScript syntax is embedded inside other syntaxes.
-"               3, Remove function FT_JavaScriptDoc().
-"                Since VIM do the better than me.
+"               3, Remove function FT_JavaScriptDoc(). 
+"                Since VIM do the better than me. 
 "
 " TODO:
 "  - Add the HTML syntax inside the JSDoc
@@ -146,7 +146,7 @@ endif "DOM/HTML/CSS
 syntax cluster javaScriptAll       contains=javaScriptComment,javaScriptLineComment,javaScriptDocComment,javaScriptStringD,javaScriptStringS,javaScriptRegexpString,javaScriptNumber,javaScriptFloat,javaScriptLabel,javaScriptSource,javaScriptType,javaScriptOperator,javaScriptBoolean,javaScriptNull,javaScriptFunction,javaScriptConditional,javaScriptRepeat,javaScriptBranch,javaScriptStatement,javaScriptGlobalObjects,javaScriptExceptions,javaScriptFutureKeys,javaScriptDomErrNo,javaScriptDomNodeConsts,javaScriptHtmlEvents,javaScriptDotNotation
 syntax region  javaScriptBracket   matchgroup=javaScriptBracket transparent start="\[" end="\]" contains=@javaScriptAll,javaScriptParensErrB,javaScriptParensErrC,javaScriptBracket,javaScriptParen,javaScriptBlock,@htmlPreproc
 syntax region  javaScriptParen     matchgroup=javaScriptParen   transparent start="("  end=")"  contains=@javaScriptAll,javaScriptParensErrA,javaScriptParensErrC,javaScriptParen,javaScriptBracket,javaScriptBlock,@htmlPreproc
-syntax region  javaScriptBlock     matchgroup=javaScriptBlock   transparent start="{"  end="}"  contains=@javaScriptAll,javaScriptParensErrA,javaScriptParensErrB,javaScriptParen,javaScriptBracket,javaScriptBlock,@htmlPreproc
+syntax region  javaScriptBlock     matchgroup=javaScriptBlock   transparent start="{"  end="}"  contains=@javaScriptAll,javaScriptParensErrA,javaScriptParensErrB,javaScriptParen,javaScriptBracket,javaScriptBlock,@htmlPreproc 
 
 "" catch errors caused by wrong parenthesis
 syntax match   javaScriptParensError    ")\|}\|\]"

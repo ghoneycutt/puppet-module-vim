@@ -1,0 +1,4 @@
+---
+vim::package_list:
+ - 'vim'
+ - 'vim-data'

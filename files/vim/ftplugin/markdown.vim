@@ -19,3 +19,5 @@ else
 endif
 
 " vim:set sw=2:
+"
+setlocal textwidth=72
