@@ -18,6 +18,9 @@ This is meant to make vim useful on servers with some basic, sane
 settings. It is not meant to manage a developer's workstation where you
 would be managing a ton of plugins and configuration.
 
+Documented with Puppet Strings at
+[http://ghoneycutt.github.io/puppet-module-vim/](http://ghoneycutt.github.io/puppet-module-vim/).
+
 ## Setup
 
 ### What vim affects
