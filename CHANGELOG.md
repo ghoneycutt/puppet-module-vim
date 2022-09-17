@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v3.0.0](https://github.com/ghoneycutt/puppet-module-vim/tree/v3.0.0) (2022-09-17)
+
+[Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.13.0...v3.0.0)
+
+### Added
+
+- Use PDK and support Puppet 7 [\#40](https://github.com/ghoneycutt/puppet-module-vim/pull/40) ([ghoneycutt](https://github.com/ghoneycutt))
+
 ## [v2.13.0](https://github.com/ghoneycutt/puppet-module-vim/tree/v2.13.0) (2019-01-04)
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.12.0...v2.13.0)
@@ -28,6 +36,7 @@ All notable changes to this project will be documented in this file. The format 
 - Turn on hlsearch which highlights search results [\#34](https://github.com/ghoneycutt/puppet-module-vim/pull/34) ([ghoneycutt](https://github.com/ghoneycutt))
 - Fix Travis-ci matrix so that each feature release is tested [\#33](https://github.com/ghoneycutt/puppet-module-vim/pull/33) ([ghoneycutt](https://github.com/ghoneycutt))
 - Test against latest bugfix of each feature release [\#32](https://github.com/ghoneycutt/puppet-module-vim/pull/32) ([ghoneycutt](https://github.com/ghoneycutt))
+- Stdlib 460 [\#29](https://github.com/ghoneycutt/puppet-module-vim/pull/29) ([ghoneycutt](https://github.com/ghoneycutt))
 
 ## [v2.10.0](https://github.com/ghoneycutt/puppet-module-vim/tree/v2.10.0) (2015-05-21)
 
@@ -37,7 +46,6 @@ All notable changes to this project will be documented in this file. The format 
 
 - Support puppetv4 [\#31](https://github.com/ghoneycutt/puppet-module-vim/pull/31) ([ghoneycutt](https://github.com/ghoneycutt))
 - Add support for the future parser in Puppet v3 [\#30](https://github.com/ghoneycutt/puppet-module-vim/pull/30) ([ghoneycutt](https://github.com/ghoneycutt))
-- Stdlib 460 [\#29](https://github.com/ghoneycutt/puppet-module-vim/pull/29) ([ghoneycutt](https://github.com/ghoneycutt))
 
 ## [v2.9.1](https://github.com/ghoneycutt/puppet-module-vim/tree/v2.9.1) (2014-11-05)
 
