@@ -77,6 +77,8 @@ Performance/RegexpMatch:
   Enabled: false
 RSpec/MessageSpies:
   EnforcedStyle: receive
+RSpec/NamedSubject:
+  Enabled: false
 Style/Documentation:
   Exclude:
   - lib/puppet/parser/functions/**/*
