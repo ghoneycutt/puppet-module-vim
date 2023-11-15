@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v4.0.0](https://github.com/ghoneycutt/puppet-module-vim/tree/v4.0.0) (2023-11-15)
+
+[Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v3.0.0...v4.0.0)
+
+### Merged pull requests:
+
+- Support Puppet 8 and stdlib 9.x [\#41](https://github.com/ghoneycutt/puppet-module-vim/pull/41) ([treydock](https://github.com/treydock))
+
 ## [v3.0.0](https://github.com/ghoneycutt/puppet-module-vim/tree/v3.0.0) (2022-09-17)
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.13.0...v3.0.0)
@@ -14,7 +22,7 @@ All notable changes to this project will be documented in this file. The format 
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.12.0...v2.13.0)
 
-### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+### Merged pull requests:
 
 - Add support for Puppet 5 & 6 [\#37](https://github.com/ghoneycutt/puppet-module-vim/pull/37) ([Phil-Friderici](https://github.com/Phil-Friderici))
 - Support Puppet \>= 4.10 [\#36](https://github.com/ghoneycutt/puppet-module-vim/pull/36) ([Phil-Friderici](https://github.com/Phil-Friderici))
@@ -23,7 +31,7 @@ All notable changes to this project will be documented in this file. The format 
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.11.0...v2.12.0)
 
-### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+### Merged pull requests:
 
 - Support Ruby 2.3.1 and fix dependencies [\#35](https://github.com/ghoneycutt/puppet-module-vim/pull/35) ([ghoneycutt](https://github.com/ghoneycutt))
 
@@ -31,27 +39,27 @@ All notable changes to this project will be documented in this file. The format 
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.10.0...v2.11.0)
 
-### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+### Merged pull requests:
 
 - Turn on hlsearch which highlights search results [\#34](https://github.com/ghoneycutt/puppet-module-vim/pull/34) ([ghoneycutt](https://github.com/ghoneycutt))
 - Fix Travis-ci matrix so that each feature release is tested [\#33](https://github.com/ghoneycutt/puppet-module-vim/pull/33) ([ghoneycutt](https://github.com/ghoneycutt))
 - Test against latest bugfix of each feature release [\#32](https://github.com/ghoneycutt/puppet-module-vim/pull/32) ([ghoneycutt](https://github.com/ghoneycutt))
-- Stdlib 460 [\#29](https://github.com/ghoneycutt/puppet-module-vim/pull/29) ([ghoneycutt](https://github.com/ghoneycutt))
 
 ## [v2.10.0](https://github.com/ghoneycutt/puppet-module-vim/tree/v2.10.0) (2015-05-21)
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.9.1...v2.10.0)
 
-### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+### Merged pull requests:
 
 - Support puppetv4 [\#31](https://github.com/ghoneycutt/puppet-module-vim/pull/31) ([ghoneycutt](https://github.com/ghoneycutt))
 - Add support for the future parser in Puppet v3 [\#30](https://github.com/ghoneycutt/puppet-module-vim/pull/30) ([ghoneycutt](https://github.com/ghoneycutt))
+- Stdlib 460 [\#29](https://github.com/ghoneycutt/puppet-module-vim/pull/29) ([ghoneycutt](https://github.com/ghoneycutt))
 
 ## [v2.9.1](https://github.com/ghoneycutt/puppet-module-vim/tree/v2.9.1) (2014-11-05)
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.9.0...v2.9.1)
 
-### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+### Merged pull requests:
 
 - Don't manage package vim-base for Suse 11, 12 [\#27](https://github.com/ghoneycutt/puppet-module-vim/pull/27) ([anders-larsson](https://github.com/anders-larsson))
 
@@ -59,7 +67,7 @@ All notable changes to this project will be documented in this file. The format 
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.8.0...v2.9.0)
 
-### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+### Merged pull requests:
 
 - Specify provider [\#26](https://github.com/ghoneycutt/puppet-module-vim/pull/26) ([ghoneycutt](https://github.com/ghoneycutt))
 
@@ -67,7 +75,7 @@ All notable changes to this project will be documented in this file. The format 
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.7.0...v2.8.0)
 
-### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+### Merged pull requests:
 
 - Support Ubuntu 12.04 and 14.04 [\#24](https://github.com/ghoneycutt/puppet-module-vim/pull/24) ([ghoneycutt](https://github.com/ghoneycutt))
 
@@ -75,7 +83,7 @@ All notable changes to this project will be documented in this file. The format 
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.6.0...v2.7.0)
 
-### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+### Merged pull requests:
 
 - Support solaris 10 and 11 [\#23](https://github.com/ghoneycutt/puppet-module-vim/pull/23) ([ghoneycutt](https://github.com/ghoneycutt))
 
@@ -83,7 +91,7 @@ All notable changes to this project will be documented in this file. The format 
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.5.0...v2.6.0)
 
-### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+### Merged pull requests:
 
 - El7 [\#22](https://github.com/ghoneycutt/puppet-module-vim/pull/22) ([ghoneycutt](https://github.com/ghoneycutt))
 
@@ -91,7 +99,7 @@ All notable changes to this project will be documented in this file. The format 
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.4.1...v2.5.0)
 
-### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+### Merged pull requests:
 
 - Add SUSE 12 support [\#20](https://github.com/ghoneycutt/puppet-module-vim/pull/20) ([eabecho](https://github.com/eabecho))
 - Add spec tests for passing an array as the package name [\#19](https://github.com/ghoneycutt/puppet-module-vim/pull/19) ([ghoneycutt](https://github.com/ghoneycutt))
@@ -100,7 +108,7 @@ All notable changes to this project will be documented in this file. The format 
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.4.0...v2.4.1)
 
-### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+### Merged pull requests:
 
 - Support Puppet v3.4.x and Ruby v2.0.0 [\#18](https://github.com/ghoneycutt/puppet-module-vim/pull/18) ([ghoneycutt](https://github.com/ghoneycutt))
 
@@ -108,7 +116,7 @@ All notable changes to this project will be documented in this file. The format 
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.3.0...v2.4.0)
 
-### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+### Merged pull requests:
 
 - Travis [\#16](https://github.com/ghoneycutt/puppet-module-vim/pull/16) ([ghoneycutt](https://github.com/ghoneycutt))
 - Remove Travis work around for ruby v1.8.7 [\#15](https://github.com/ghoneycutt/puppet-module-vim/pull/15) ([ghoneycutt](https://github.com/ghoneycutt))
@@ -117,7 +125,7 @@ All notable changes to this project will be documented in this file. The format 
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.2.0...v2.3.0)
 
-### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+### Merged pull requests:
 
 - Support suse 10 [\#14](https://github.com/ghoneycutt/puppet-module-vim/pull/14) ([ghoneycutt](https://github.com/ghoneycutt))
 - Update spec tests for rspec-puppet v1.0.0 [\#12](https://github.com/ghoneycutt/puppet-module-vim/pull/12) ([ghoneycutt](https://github.com/ghoneycutt))
@@ -126,7 +134,7 @@ All notable changes to this project will be documented in this file. The format 
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v2.1.0...v2.2.0)
 
-### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+### Merged pull requests:
 
 - Test Puppet v2.7, since we say it is supported [\#11](https://github.com/ghoneycutt/puppet-module-vim/pull/11) ([ghoneycutt](https://github.com/ghoneycutt))
 - Add support for Debian 6 [\#10](https://github.com/ghoneycutt/puppet-module-vim/pull/10) ([ghoneycutt](https://github.com/ghoneycutt))
@@ -135,7 +143,7 @@ All notable changes to this project will be documented in this file. The format 
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/2fa849ae26a8700b6b98eb2db6a12d9719682d6d...v2.1.0)
 
-### UNCATEGORIZED PRS; LABEL THEM ON GITHUB
+### Merged pull requests:
 
 - Added SLES support, fixed file permissions [\#9](https://github.com/ghoneycutt/puppet-module-vim/pull/9) ([Phil-Friderici](https://github.com/Phil-Friderici))
 - Normalize travis testing [\#7](https://github.com/ghoneycutt/puppet-module-vim/pull/7) ([narf-](https://github.com/narf-))
@@ -147,4 +155,4 @@ All notable changes to this project will be documented in this file. The format 
 * Rebirth
 
 
-\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
+\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*

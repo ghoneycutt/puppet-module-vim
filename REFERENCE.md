@@ -26,28 +26,28 @@ include vim
 
 The following parameters are available in the `vim` class:
 
-* [`package_provider`](#package_provider)
-* [`package_list`](#package_list)
-* [`root_vimrc_source`](#root_vimrc_source)
-* [`root_vimrc_path`](#root_vimrc_path)
-* [`root_vimrc_owner`](#root_vimrc_owner)
-* [`root_vimrc_group`](#root_vimrc_group)
-* [`root_vimrc_mode`](#root_vimrc_mode)
-* [`root_vim_dir_source`](#root_vim_dir_source)
-* [`root_vim_dir_path`](#root_vim_dir_path)
-* [`root_vim_dir_owner`](#root_vim_dir_owner)
-* [`root_vim_dir_group`](#root_vim_dir_group)
-* [`root_vim_dir_mode`](#root_vim_dir_mode)
+* [`package_provider`](#-vim--package_provider)
+* [`package_list`](#-vim--package_list)
+* [`root_vimrc_source`](#-vim--root_vimrc_source)
+* [`root_vimrc_path`](#-vim--root_vimrc_path)
+* [`root_vimrc_owner`](#-vim--root_vimrc_owner)
+* [`root_vimrc_group`](#-vim--root_vimrc_group)
+* [`root_vimrc_mode`](#-vim--root_vimrc_mode)
+* [`root_vim_dir_source`](#-vim--root_vim_dir_source)
+* [`root_vim_dir_path`](#-vim--root_vim_dir_path)
+* [`root_vim_dir_owner`](#-vim--root_vim_dir_owner)
+* [`root_vim_dir_group`](#-vim--root_vim_dir_group)
+* [`root_vim_dir_mode`](#-vim--root_vim_dir_mode)
 
-##### <a name="package_provider"></a>`package_provider`
+##### <a name="-vim--package_provider"></a>`package_provider`
 
 Data type: `Optional[String[1]]`
 
 The puppet provider to be used for the package resources.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="package_list"></a>`package_list`
+##### <a name="-vim--package_list"></a>`package_list`
 
 Data type: `Array[String[1]]`
 
@@ -55,7 +55,7 @@ List of vim packages to be present.
 
 Default value: `['vim-common', 'vim-enhanced']`
 
-##### <a name="root_vimrc_source"></a>`root_vimrc_source`
+##### <a name="-vim--root_vimrc_source"></a>`root_vimrc_source`
 
 Data type: `String[1]`
 
@@ -64,7 +64,7 @@ Value of the source parameter used in the file resource for managing
 
 Default value: `'vim/vimrc'`
 
-##### <a name="root_vimrc_path"></a>`root_vimrc_path`
+##### <a name="-vim--root_vimrc_path"></a>`root_vimrc_path`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -72,7 +72,7 @@ Path to the `.vimrc` configuration file.
 
 Default value: `'/root/.vimrc'`
 
-##### <a name="root_vimrc_owner"></a>`root_vimrc_owner`
+##### <a name="-vim--root_vimrc_owner"></a>`root_vimrc_owner`
 
 Data type: `String[1]`
 
@@ -80,7 +80,7 @@ Owner of the `.vimrc` file.
 
 Default value: `'root'`
 
-##### <a name="root_vimrc_group"></a>`root_vimrc_group`
+##### <a name="-vim--root_vimrc_group"></a>`root_vimrc_group`
 
 Data type: `String[1]`
 
@@ -88,7 +88,7 @@ Group of the `.vimrc` file.
 
 Default value: `'root'`
 
-##### <a name="root_vimrc_mode"></a>`root_vimrc_mode`
+##### <a name="-vim--root_vimrc_mode"></a>`root_vimrc_mode`
 
 Data type: `Stdlib::Filemode`
 
@@ -96,7 +96,7 @@ Mode of the `.vimrc` file.
 
 Default value: `'0644'`
 
-##### <a name="root_vim_dir_source"></a>`root_vim_dir_source`
+##### <a name="-vim--root_vim_dir_source"></a>`root_vim_dir_source`
 
 Data type: `String[1]`
 
@@ -105,7 +105,7 @@ Value of the source parameter used in the file resource for managing the
 
 Default value: `'vim/vim'`
 
-##### <a name="root_vim_dir_path"></a>`root_vim_dir_path`
+##### <a name="-vim--root_vim_dir_path"></a>`root_vim_dir_path`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -113,7 +113,7 @@ Path to the `.vim` directory.
 
 Default value: `'/root/.vim'`
 
-##### <a name="root_vim_dir_owner"></a>`root_vim_dir_owner`
+##### <a name="-vim--root_vim_dir_owner"></a>`root_vim_dir_owner`
 
 Data type: `String[1]`
 
@@ -121,7 +121,7 @@ Owner of the `.vim` directory.
 
 Default value: `'root'`
 
-##### <a name="root_vim_dir_group"></a>`root_vim_dir_group`
+##### <a name="-vim--root_vim_dir_group"></a>`root_vim_dir_group`
 
 Data type: `String[1]`
 
@@ -129,7 +129,7 @@ Group of the `.vim` directory.
 
 Default value: `'root'`
 
-##### <a name="root_vim_dir_mode"></a>`root_vim_dir_mode`
+##### <a name="-vim--root_vim_dir_mode"></a>`root_vim_dir_mode`
 
 Data type: `Stdlib::Filemode`
 
