@@ -1,3 +1,30 @@
-To install these files, copy them into ~/.vim, or the relevant
-system-wide location.  To use the ftplugin and indenting, you may need
-to enable them with "filetype plugin indent on" in your vimrc.
+Bundled Vim runtime files
+=========================
+
+These files are copied into root's ~/.vim by the vim module. Only files
+that Vim 9 does not already ship are bundled here; Vim 9 detects *.pp and
+*.epp on its own and provides its own markdown and less.vim support, so
+there are no ftdetect files and no copies of Vim's own runtime.
+
+Source: https://github.com/rodjek/vim-puppet
+Commit: 21b2b9ecaf8ef18ea4755ed7f82937eb97989c82 (2026-04-08)
+License: Apache-2.0 (same as this module)
+
+Files taken verbatim from that commit:
+
+  after/ftplugin/puppet.vim    aligns hashrockets as you type =>
+  autoload/puppet/align.vim    used by after/ftplugin/puppet.vim
+  autoload/puppet/format.vim   used by ftplugin/puppet.vim (formatexpr)
+  ftplugin/epuppet.vim
+  ftplugin/puppet.vim
+  indent/puppet.vim
+  syntax/epuppet.vim
+  syntax/puppet.vim
+
+Deliberately not taken: ftdetect/ (Vim 9 detects these filetypes),
+autoload/puppet/ctags.vim, ctags/, ftplugin/puppet_tagbar.vim,
+after/plugin/gutentags.vim, compiler/, ftdetect/puppet.lua and test/.
+These need developer tooling (ctags, tagbar, gutentags, puppet-lint,
+neovim) that does not belong in a server default.
+
+To update, see "Updating the bundled vim files" in AGENTS.md.

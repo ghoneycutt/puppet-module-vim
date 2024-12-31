@@ -49,14 +49,16 @@ describe 'vim' do
   end
 
   describe 'on unsupported platform' do
-    let :facts do
-      { :os['family'] => 'unsupported' }
+    let(:facts) do
+      { os: { 'family' => 'unsupported', 'name' => 'unsupported', 'release' => { 'major' => '1', 'full' => '1' } }, kernelrelease: '1' }
     end
 
-    it 'does not fail' do
-      expect do
-        is_expected.to contain_class('vim')
-      end
-    end
+    it { is_expected.to compile.with_all_deps }
+    it { is_expected.to contain_class('vim') }
+    # falls back to the class defaults when there is no Hiera data
+    it { is_expected.to contain_package('vim-common').with_ensure('present') }
+    it { is_expected.to contain_package('vim-enhanced').with_ensure('present') }
+    it { is_expected.to contain_file('root_vimrc').with_path('/root/.vimrc') }
+    it { is_expected.to contain_file('root_vim_dir').with_path('/root/.vim') }
   end
 end
