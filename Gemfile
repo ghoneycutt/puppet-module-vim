@@ -17,23 +17,23 @@ ruby_version_segments = Gem::Version.new(RUBY_VERSION.dup).segments
 minor_version = ruby_version_segments[0..1].join('.')
 
 group :development do
-  gem "voxpupuli-test", '6.0.0',        require: false
+  gem "voxpupuli-test", require: false
   gem "rubocop-performance", '~> 1.18', require: false
-  gem "faraday", '~> 1.0',              require: false
-  gem "github_changelog_generator",     require: false
-  gem "puppet-blacksmith",              require: false
-  gem "puppet-strings",                 require: false
+  gem "faraday", '~> 1.0', require: false
+  gem "github_changelog_generator", require: false
+  gem "puppet-blacksmith", require: false
+  gem "puppet-strings", require: false
 end
 group :system_tests do
-  gem "beaker", *location_for(ENV['BEAKER_VERSION'] || '~> 4.29')
-  gem "beaker-abs", *location_for(ENV['BEAKER_ABS_VERSION'] || '~> 0.1')
-  gem "beaker-pe",                                                               require: false
+  gem "beaker"
+  gem "beaker-abs"
+  gem "beaker-pe", require: false
   gem "beaker-hostgenerator"
   gem "beaker-rspec"
   gem "beaker-docker"
   gem "beaker-puppet"
-  gem "beaker-puppet_install_helper",                                            require: false
-  gem "beaker-module_install_helper",                                            require: false
+  gem "beaker-puppet_install_helper", require: false
+  gem "beaker-module_install_helper", require: false
 end
 
 puppet_version = ENV['PUPPET_GEM_VERSION']

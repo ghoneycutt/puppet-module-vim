@@ -58,15 +58,17 @@ jobs:
           - "el8"
           - "el9"
           - "debian-11"
+          - "debian-12"
           - "ubuntu-2004"
           - "ubuntu-2204"
+          - "ubuntu-2404"
         puppet:
           - "puppet7"
           - "puppet8"
     env:
       BUNDLE_WITHOUT: development:release
       BEAKER_debug: true
-    name: 
+    name:
     steps:
       - name: Enable IPv6 on docker
         run: |
