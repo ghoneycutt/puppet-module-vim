@@ -1,6 +1,6 @@
 require 'spec_helper'
 describe 'vim' do
-  on_supported_os.each do |os, os_facts|
+  on_supported_os.sort.each do |os, os_facts|
     context "on #{os} with default values for class parameters" do
       let(:facts) { os_facts }
 
