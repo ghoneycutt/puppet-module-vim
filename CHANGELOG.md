@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v5.0.0](https://github.com/ghoneycutt/puppet-module-vim/tree/v5.0.0) (2026-10-10)
+
+[Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v4.0.0...v5.0.0)
+
+### Merged pull requests:
+
+- Openvox [\#44](https://github.com/ghoneycutt/puppet-module-vim/pull/44) ([ghoneycutt](https://github.com/ghoneycutt))
+- Test stdlib 9.x with regular unit tests [\#42](https://github.com/ghoneycutt/puppet-module-vim/pull/42) ([treydock](https://github.com/treydock))
+
 ## [v4.0.0](https://github.com/ghoneycutt/puppet-module-vim/tree/v4.0.0) (2023-11-15)
 
 [Full Changelog](https://github.com/ghoneycutt/puppet-module-vim/compare/v3.0.0...v4.0.0)

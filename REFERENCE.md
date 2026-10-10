@@ -16,7 +16,7 @@ This module manages Vim
 
 #### Examples
 
-##### 
+#####
 
 ```puppet
 include vim
@@ -136,4 +136,3 @@ Data type: `Stdlib::Filemode`
 Mode of the `.vim` directory.
 
 Default value: `'0644'`
-
