@@ -6,13 +6,13 @@
 <title>
   File: README
   
-    &mdash; Documentation by YARD 0.9.34
+    &mdash; Documentation by YARD 0.9.45
   
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" />
+  <link rel="stylesheet" href="css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="puppet_class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -57,68 +59,76 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'>
-<h1 id="label-vim">vim</h1>
-
-<h4 id="label-Table+of+Contents">Table of Contents</h4>
-<ol><li>
-<p><a href="#module-description">Module Description - What the module does and why it is useful</a></p>
-</li><li>
-<p><a href="#setup">Setup - The basics of getting started with vim</a></p>
-</li><li>
-<p><a href="#what-vim-affects">What vim affects</a></p>
-</li><li>
-<p><a href="#beginning-with-vim">Beginning with vim</a></p>
-</li><li>
-<p><a href="#usage">Usage - Configuration options and additional functionality</a></p>
-</li><li>
-<p><a href="#limitations">Limitations - OS compatibility, etc.</a></p>
-</li><li>
-<p><a href="#development">Development - Guide for contributing to the module</a></p>
-</li></ol>
-
-<h2 id="label-Description">Description</h2>
-
-<p>This is a very simple module to manage Vim. It manages the packages, the <code>.vimrc</code> configuration file and populates a few syntax files for Puppet. This is meant to make vim useful on servers with some basic, sane settings. It is not meant to manage a developer’s workstation where you would be managing a ton of plugins and configuration.</p>
-
-<p>Documented with Puppet Strings at <a href="http://ghoneycutt.github.io/puppet-module-vim/">ghoneycutt.github.io/puppet-module-vim/</a>.</p>
-
-<h2 id="label-Setup">Setup</h2>
-
-<h3 id="label-What+vim+affects">What vim affects</h3>
-
-<p>This module manages the <code>/root/.vimrc</code> file and <code>/root/.vim</code> directory, which gets some plugins installed. It also manages the related vim packages for the platform.</p>
-
-<h3 id="label-Beginning+with+vim">Beginning with vim</h3>
-
+      <div id="content"><div id='filecontents'><h1 id="vim">vim</h1>
+<h4 id="Table_of_Contents">Table of Contents</h4>
+<ol>
+<li><a href="#module-description">Module Description - What the module does and why it is useful</a></li>
+<li>
+<a href="#setup">Setup - The basics of getting started with vim</a>
+<ul>
+<li><a href="#what-vim-affects">What vim affects</a></li>
+<li><a href="#beginning-with-vim">Beginning with vim</a></li>
+</ul>
+</li>
+<li><a href="#usage">Usage - Configuration options and additional functionality</a></li>
+<li><a href="#limitations">Limitations - OS compatibility, etc.</a></li>
+<li><a href="#development">Development - Guide for contributing to the module</a></li>
+</ol>
+<h2 id="Description">Description</h2>
+<p>This is a very simple module to manage Vim. It manages the packages, the
+<code>.vimrc</code> configuration file and populates a few syntax files for Puppet.
+This is meant to make vim useful on servers with some basic, sane
+settings. It is not meant to manage a developer's workstation where you
+would be managing a ton of plugins and configuration.</p>
+<p>Documented with Puppet Strings at
+<a href="http://ghoneycutt.github.io/puppet-module-vim/"><a href="http://ghoneycutt.github.io/puppet-module-vim/">http://ghoneycutt.github.io/puppet-module-vim/</a></a>.</p>
+<h2 id="Setup">Setup</h2>
+<h3 id="What_vim_affects">What vim affects</h3>
+<p>This module manages the <code>/root/.vimrc</code> file and <code>/root/.vim</code> directory,
+which gets some plugins installed. It also manages the related vim
+packages for the platform.</p>
+<h3 id="Beginning_with_vim">Beginning with vim</h3>
 <p>Declare the <code>vim</code> class.</p>
-
-<h2 id="label-Usage">Usage</h2>
-
+<h2 id="Usage">Usage</h2>
 <p>The normal use case.</p>
-
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_include'>include</span> <span class='id identifier rubyid_vim'>vim</span>
+<pre class="code puppet"><code class="puppet">include vim
 </code></pre>
-
 <p>To specify the package list.</p>
-
-<pre class="code ruby"><code class="ruby">class { &#39;vim&#39;:
+<pre class="code puppet"><code class="puppet">class { &#39;vim&#39;:
   package_list =&gt; [&#39;vim&#39;, &#39;vim-whatever&#39;],
 }
 </code></pre>
-
-<h2 id="label-Limitations">Limitations</h2>
-
-<p>This module officially supports the platforms listed in the <code>metadata.json</code>. It does not fail on unsupported platforms and has been known to work on many, many platforms since its creation in 2010.</p>
-
-<h2 id="label-Development">Development</h2>
-
-<p>See <a href="CONTRIBUTING_md.html">CONTRIBUTING.md</a></p>
-
-<h2 id="label-License">License</h2>
-
-<p>See <a href="LICENSE">LICENSE</a> file.</p>
-</div></div>
+<h2 id="Limitations">Limitations</h2>
+<p>This module has been tested to work on the following systems with
+OpenVox 8 and 9. Please see <code>.github/workflows/ci.yaml</code> for a full matrix
+of supported versions. This module aims to support the current and
+previous major OpenVox versions.</p>
+<ul>
+<li>EL 8</li>
+<li>EL 9</li>
+<li>EL 10</li>
+<li>Debian 13</li>
+<li>Ubuntu 22.04 LTS</li>
+<li>Ubuntu 24.04 LTS</li>
+<li>Ubuntu 26.04 LTS</li>
+</ul>
+<h3 id="May_work">May work</h3>
+<p>This module does not fail on unsupported platforms and has been known to
+work on many, many platforms since its creation in 2010. Solaris is listed
+in <code>metadata.json</code> without versions: its package data remains in <code>data/</code>
+but nothing tests it. Package data for the following platforms also
+remains in <code>data/</code> though they are no longer tested or formally supported.</p>
+<ul>
+<li>EL 5, 6 and 7</li>
+<li>Debian 12 and older</li>
+<li>Solaris 10 and 11</li>
+<li>Suse</li>
+<li>Ubuntu 20.04 LTS and older</li>
+</ul>
+<h2 id="Development">Development</h2>
+<p>See <a href="CONTRIBUTING.md">CONTRIBUTING.md</a></p>
+<h2 id="License">License</h2>
+<p>See <a href="LICENSE">LICENSE</a> file.</p></div></div>
 
       <div id="footer">
      Generated by <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>.
