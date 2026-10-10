@@ -51,9 +51,32 @@ class { 'vim':
 
 ## Limitations
 
-This module officially supports the platforms listed in the
-`metadata.json`. It does not fail on unsupported platforms and has been
-known to work on many, many platforms since its creation in 2010.
+This module has been tested to work on the following systems with
+OpenVox 8 and 9. Please see `.github/workflows/ci.yaml` for a full matrix
+of supported versions. This module aims to support the current and
+previous major OpenVox versions.
+
+ * EL 8
+ * EL 9
+ * EL 10
+ * Debian 13
+ * Ubuntu 22.04 LTS
+ * Ubuntu 24.04 LTS
+ * Ubuntu 26.04 LTS
+
+### May work
+
+This module does not fail on unsupported platforms and has been known to
+work on many, many platforms since its creation in 2010. Solaris is listed
+in `metadata.json` without versions: its package data remains in `data/`
+but nothing tests it. Package data for the following platforms also
+remains in `data/` though they are no longer tested or formally supported.
+
+ * EL 5, 6 and 7
+ * Debian 12 and older
+ * Solaris 10 and 11
+ * Suse
+ * Ubuntu 20.04 LTS and older
 
 ## Development
 

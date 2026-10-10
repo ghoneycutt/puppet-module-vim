@@ -8,6 +8,10 @@ set fo=tcq
 
 syntax on
 
+" having a ~/.vimrc stops Vim from loading its defaults.vim, which is where
+" backspace over indentation, line breaks and the insert start is enabled
+set backspace=indent,eol,start
+
 " set default comment color to cyan instead of darkblue
 " which is not very legible on a black background
 highlight comment ctermfg=cyan
